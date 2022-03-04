@@ -12,6 +12,27 @@
  * Date Last Modified: 3/3/2022
  */
 
+/*
+ * Data Abstraction:
+ *     Int numElements is declared to hold total number of elements.
+ *     Int currElement is declared to hold element in each loop
+ *     iteration. Int dupElements is initialized to zero to hold
+ *     number of duplicates. Ints numSum, numMax, and numMin are
+ *     initialized to zero to hold output values. Bool usedNumber
+ *     is declared to discern whether a duplicate has been found
+ *     or not. Int array userNums is declared to hold user numbers.
+ * Input:
+ *     Program takes input for array size. Program then takes integers
+ *     to fill up each array slot.
+ * Process:
+ *     Program calculates sum, max, min, and then duplicate elements.
+ * Output:
+ *     Program outputs array forwards and backwards, and then the sum,
+ *     min, max, and duplicate element count.
+ * Assumptions:
+ *     Assumes user enters integers
+ *     Assumes user enters correct number of integers
+ */
 #include <iostream>
 
 using namespace std;
@@ -24,6 +45,7 @@ int main() {
     int numSum = 0;
     int numMax = 0;
     int numMin = 0;
+    bool usedNumber;
 
     /* Input */
     cout << "Input the number of elements to store in the array: ";
@@ -60,14 +82,29 @@ int main() {
         }
     }
 
+    //Not finished
     //Get duplicates
-    for (int i = 0; i < numElements; ++i) {
+    int usedList[numElements];
+    int usedCount = 0;
+
+    for (int i = 0; i < numElements; ++i) { //For each element...
         currElement = userNums[i];
-        for (int q = 0; q < numElements; ++q) {
+        for (int q = 0; q < numElements; ++q) { //Compare with each element
             if (currElement == userNums[q]) {
-                dupElements += 1;
+                usedNumber = false;
+                if (!(i == 0)) {
+                    for (int v = 0; v < i; ++v) { //Checks for used number
+                        if (currElement == usedList[v]) {
+                            usedNumber = true;
+                        }
+                    }
+                }
+                if (!(usedNumber)) {
+                    dupElements += 1;
+                }
             }
         }
+        usedList[i] = currElement;
     }
     dupElements -= numElements;
 

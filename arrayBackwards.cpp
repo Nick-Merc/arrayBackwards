@@ -1,5 +1,15 @@
 /* 
- * fixme
+ * Author: Nicholas Mercadante
+ * Assignment Title: Array Backwards
+ * Assignment Description:
+ *     Program asks user for array size and then has
+ *     you input that many values to be stored in an
+ *     array. Program then prints array forwards, then
+ *     backwards, and then returns the sum, min, max,
+ *     and duplicate element count.
+ * Due Date: 3/3/2022
+ * Date Create: 3/2/2022
+ * Date Last Modified: 3/3/2022
  */
 
 #include <iostream>

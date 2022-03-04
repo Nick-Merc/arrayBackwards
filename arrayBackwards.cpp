@@ -8,7 +8,7 @@
  *     backwards, and then returns the sum, min, max,
  *     and duplicate element count.
  * Due Date: 3/3/2022
- * Date Create: 3/2/2022
+ * Date Created: 3/2/2022
  * Date Last Modified: 3/3/2022
  */
 
@@ -50,14 +50,14 @@ int main() {
     /* Input */
     cout << "Input the number of elements to store in the array: ";
     cin >> numElements;
-    cout << endl;
+    cout << numElements << endl;
 
     cout << "Input 10 integers:" << endl;
     int userNums[numElements];
     for (int i = 0; i < numElements; ++i) {
         cout << "integer - " << i << " : ";
         cin >> userNums[i];
-        cout << endl;
+        cout << userNums[i] << endl;
     }
 
     /* Process */
@@ -85,7 +85,6 @@ int main() {
     //Not finished
     //Get duplicates
     int usedList[numElements];
-    int usedCount = 0;
 
     for (int i = 0; i < numElements; ++i) { //For each element...
         currElement = userNums[i];
